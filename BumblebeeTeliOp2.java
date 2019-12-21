@@ -14,7 +14,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
 
-@TeleOp(name = "BubbleBee TeleOp", group = "LinearOpMode")
+//@TeleOp(name = "BubbleBee TeleOp", group = "LinearOpMode")
 //@Disabled
 public class BumblebeeTeliOp2 extends LinearOpMode {
 
@@ -210,7 +210,8 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
             if (armUse) {
 
 
-                armMain.setPosition(1);
+                //armMain.setPosition(1);
+                armMain.setPosition(2);
                 sleep(1000);
                 armHold.setPosition(0);
 

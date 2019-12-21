@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name="Autonomous Red", group="Pushbot")
+//@Autonomous(name="Autonomous Red", group="Pushbot")
 //@Disabled
 public class AutonomousBumbleBeeRed extends LinearOpMode {
 
