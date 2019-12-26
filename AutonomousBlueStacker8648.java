@@ -38,7 +38,7 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         //armUP         = hardwareMap.get(DcMotor.class, "arm");
         //slider        = hardwareMap.get(DcMotor.class, "slider");
 
-        slide                = hardwareMap.get(DcMotor.class, "slide");
+        slide         = hardwareMap.get(DcMotor.class, "slide");
 
         hRight        = hardwareMap.get(Servo.class, "pullR");
         hLeft         = hardwareMap.get(Servo.class, "pullL");
@@ -115,8 +115,8 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         //stop
         rtPower.setPower(0);
         ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
+        rbPower.setPower(0);
+        lbPower.setPower(0);
         sleep(1000);
 //
 //
@@ -137,6 +137,8 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         sleep(1000);
 //
 //
+
+        //clamp
         armMain.setPosition(0);
         armHold.setPosition(1);
         sleep(1000);
@@ -154,10 +156,10 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         ltPower.setPower(.5);
         rbPower.setPower(-.5);
         lbPower.setPower(-.5);
-        sleep(1000);
-//
-//
-//
+        sleep(1700);
+
+
+
         //stop
         rtPower.setPower(0);
         ltPower.setPower(0);
@@ -165,25 +167,100 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         lbPower.setPower(0);
         sleep(1000);
 
+
+        //Move Back with a turn
+        rtPower.setPower(.75);
+        ltPower.setPower(.25);
+        rbPower.setPower(.75);
+        lbPower.setPower(.25);
+        sleep(3500);
+
+        //stop
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        rbPower.setPower(0);
+        lbPower.setPower(0);
+        sleep(1000);
+
+
+
+
+
+
+
+        //move back with a turn
+
+
 //
 //
         //hLeft.setPosition(.50);
         //sleep(1500);
 //
 //        //stop
-//        rtPower.setPower(0);
-//        ltPower.setPower(0);
-//        rbPower.setPower(0);
-//        lbPower.setPower(0);
-//        sleep(1000);
-//
-//
-//        //Move Forward
-//        rtPower.setPower(-.5);
-//        ltPower.setPower(-.5);
-//        rbPower.setPower(.5);
-//        lbPower.setPower(.5);
-//        sleep(1300);
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        rbPower.setPower(0);
+        lbPower.setPower(0);
+        sleep(1000);
+
+
+        //Move Forward
+        rtPower.setPower(-.5);
+        ltPower.setPower(-.5);
+        rbPower.setPower(.5);
+        lbPower.setPower(.5);
+        sleep(1300);
+
+
+        //unclamp
+        armMain.setPosition(1);
+        armHold.setPosition(0);
+        sleep(1000);
+
+
+        //Go left
+        ltPower.setPower(-.5);
+        lbPower.setPower(-.5);
+        rtPower.setPower(-.5);
+        rbPower.setPower(-.5);
+        sleep(300);
+
+
+        //stop
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        sleep(1000);
+
+        hLeft.setPosition(.50);
+        //sleep(1500);
+
+        //stop
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        sleep(1000);
+
+
+
+
+        //backup
+        rtPower.setPower(.5);
+        ltPower.setPower(.5);
+        rbPower.setPower(-.5);
+        lbPower.setPower(-.5);
+        sleep(600);
+
+
+        //stop
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        rtPower.setPower(0);
+        ltPower.setPower(0);
+        sleep(1000);
+
 
         //turn
 //        rtPower.setPower(.5);
