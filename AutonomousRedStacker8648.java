@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name="Autonomous Red 8648", group="Pushbot")
+//@Autonomous(name="Autonomous Red 8648", group="Pushbot")
 //@Disabled
 public class AutonomousRedStacker8648 extends LinearOpMode {
 

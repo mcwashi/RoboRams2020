@@ -6,9 +6,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-//@Autonomous(name="Autonomous Blue 8648", group="Pushbot")
+//@Autonomous(name="Autonomous Blue 8648 Sky Bridge", group="Pushbot")
 //@Disabled
-public class AutonomousBlueStacker8648 extends LinearOpMode {
+public class AutonomousBlueStacker8648SkyBridge extends LinearOpMode {
 
     private ElapsedTime runtime      = new ElapsedTime();
     private DcMotor ltPower          = null;
@@ -104,13 +104,16 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
 
 
 
+
+        hLeft.setPosition(.50);
+        sleep(1000);
+
         //Go left
         ltPower.setPower(-.5);
         lbPower.setPower(-.5);
         rtPower.setPower(-.5);
         rbPower.setPower(-.5);
-        sleep(1000);
-
+        sleep(2200);
 
         //stop
         rtPower.setPower(0);
@@ -118,39 +121,9 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         rbPower.setPower(0);
         lbPower.setPower(0);
         sleep(1000);
-//
-//
-//
-//
-        //Move Forward
-        rtPower.setPower(-.5);
-        ltPower.setPower(-.5);
-        rbPower.setPower(.5);
-        lbPower.setPower(.5);
-        sleep(900);
-//
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-//
-//
 
-        //clamp
-        armMain.setPosition(0);
-        armHold.setPosition(1);
-        sleep(1000);
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rbPower.setPower(0);
-        lbPower.setPower(0);
-        sleep(1000);
-////
-//
+
+
         //Move Back
         rtPower.setPower(.5);
         ltPower.setPower(.5);
@@ -160,20 +133,9 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
 
 
 
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rbPower.setPower(0);
-        lbPower.setPower(0);
-        sleep(1000);
 
 
-        //Move Back with a turn
-        rtPower.setPower(.75);
-        ltPower.setPower(.25);
-        rbPower.setPower(.75);
-        lbPower.setPower(.25);
-        sleep(3500);
+
 
         //stop
         rtPower.setPower(0);
@@ -181,86 +143,6 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         rbPower.setPower(0);
         lbPower.setPower(0);
         sleep(1000);
-
-
-
-
-
-
-
-        //move back with a turn
-
-
-//
-//
-        //hLeft.setPosition(.50);
-        //sleep(1500);
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rbPower.setPower(0);
-        lbPower.setPower(0);
-        sleep(1000);
-
-
-        //Move Forward
-        rtPower.setPower(-.5);
-        ltPower.setPower(-.5);
-        rbPower.setPower(.5);
-        lbPower.setPower(.5);
-        sleep(1300);
-
-
-        //unclamp
-        armMain.setPosition(1);
-        armHold.setPosition(0);
-        sleep(1000);
-
-
-        //Go left
-        ltPower.setPower(-.5);
-        lbPower.setPower(-.5);
-        rtPower.setPower(-.5);
-        rbPower.setPower(-.5);
-        sleep(300);
-
-
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-
-        hLeft.setPosition(.50);
-        //sleep(1500);
-
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-
-
-
-
-        //backup
-        rtPower.setPower(.5);
-        ltPower.setPower(.5);
-        rbPower.setPower(-.5);
-        lbPower.setPower(-.5);
-        sleep(200);
-
-
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-
 
         hLeft.setPosition(0);
         sleep(500);

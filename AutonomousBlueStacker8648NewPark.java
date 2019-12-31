@@ -6,9 +6,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-//@Autonomous(name="Autonomous Blue 8648", group="Pushbot")
+@Autonomous(name="Autonomous Blue 8648 Glass", group="Pushbot")
 //@Disabled
-public class AutonomousBlueStacker8648 extends LinearOpMode {
+public class AutonomousBlueStacker8648NewPark extends LinearOpMode {
 
     private ElapsedTime runtime      = new ElapsedTime();
     private DcMotor ltPower          = null;
@@ -56,7 +56,6 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
 //        grMain               = hardwareMap.get(Servo.class, "grMain");
 //        grHold           = hardwareMap.get(Servo.class, "grHold");
 //
-
 
 
 
@@ -223,7 +222,7 @@ public class AutonomousBlueStacker8648 extends LinearOpMode {
         lbPower.setPower(-.5);
         rtPower.setPower(-.5);
         rbPower.setPower(-.5);
-        sleep(300);
+        sleep(2000);
 
 
         //stop

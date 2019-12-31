@@ -13,8 +13,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-
-//@TeleOp(name = "BubbleBee TeleOp", group = "LinearOpMode")
+@TeleOp(name = "BubbleBee TeleOp", group = "LinearOpMode")
 //@Disabled
 public class BumblebeeTeliOp2 extends LinearOpMode {
 
@@ -68,7 +67,7 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
 
         //armMain.setPosition(0);
 
-        armHold.setPosition(-1);
+        //armHold.setPosition(-1);
 
         hRight.setPosition(0);
         hLeft.setPosition(1);
@@ -210,9 +209,9 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
             if (armUse) {
 
 
-                //armMain.setPosition(1);
-                armMain.setPosition(2);
-                sleep(1000);
+                armMain.setPosition(1);
+                //armMain.setPosition(2);
+                sleep(500);
                 armHold.setPosition(0);
 
 
@@ -220,7 +219,12 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
             }else{
 
                 armHold.setPosition(1);
+                sleep(1000);
                 armMain.setPosition(0);
+
+
+
+
 
             }
 
