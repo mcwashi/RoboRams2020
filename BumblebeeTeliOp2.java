@@ -13,7 +13,8 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-@TeleOp(name = "BubbleBee TeleOp", group = "LinearOpMode")
+
+@TeleOp(name = "BubbleBee TeleOp 2", group = "LinearOpMode")
 //@Disabled
 public class BumblebeeTeliOp2 extends LinearOpMode {
 
@@ -30,8 +31,6 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
 
     private Servo armMain;
     private Servo armHold;
-
-
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -53,8 +52,6 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
         armMain       = hardwareMap.get(Servo.class, "aMain");
         armHold       = hardwareMap.get(Servo.class, "aHold");
 
-
-
         // Most robots need the motor on one side to be reversed to drive forward
         // Reverse the motor that runs backwards when connected directly to the battery
         ltPower.setDirection(DcMotor.Direction.FORWARD);
@@ -62,17 +59,12 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
         rtPower.setDirection(DcMotor.Direction.REVERSE);
         rbPower.setDirection(DcMotor.Direction.REVERSE);
 
+        //armMain.setPosition(-.80);
+        //armHold.setPosition(.95);
 
-
-
-        //armMain.setPosition(0);
-
-        //armHold.setPosition(-1);
 
         hRight.setPosition(0);
         hLeft.setPosition(1);
-
-
 
         // Tell the driver that initialization is complete.
         telemetry.addData("Status", "Initialized");
@@ -84,50 +76,20 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
 
             double leftBackPower;
             double rightBackPower;
+
             double leftFrontPower;
             double rightFrontPower;
-            double strafeRight  = gamepad1.left_trigger;
-            double strafeLeft   = gamepad1.right_trigger;
 
-
-            //old way of doing this
-            double  left            = -gamepad1.left_stick_y;
-            double  right             = gamepad1.right_stick_x;
-
-            //left = -gamepad1.left_stick_y;
-            //right = -gamepad1.right_stick_y;
-            //robot.leftDrive.setPower(left);
-            //robot.rightDrive.setPower(right);
-
-
-
+            double  drive            = -gamepad1.left_stick_y;
+            double  turn             = gamepad1.right_stick_x;
             boolean armUpControl     = gamepad2.left_bumper;
             boolean armDownConroler  = gamepad2.right_bumper;
             boolean sliderPushControl= gamepad2.y;
             boolean sliderPushReturn = gamepad2.b;
             boolean armUse           = gamepad2.x;
-            //Marcus added this
+            double strafeRight  = gamepad1.left_trigger;
+            double strafeLeft   = gamepad1.right_trigger;
             boolean driverBringDown = gamepad1.a;
-
-
-
-            leftFrontPower   = Range.clip(left + right, -1.0, 1.0) ;
-            leftBackPower    = Range.clip(left + right, -1.0, 1.0);
-            rightFrontPower  = Range.clip(left - right, -1.0, 1.0);
-            rightBackPower   = Range.clip(left - right, -1.0, 1.0);
-
-
-
-            //ltPower.setPower(leftFrontPower);
-            //lbPower.setPower(leftBackPower);
-            //rtPower.setPower(rightBackPower);
-            //rbPower.setPower(rightFrontPower);
-
-            ltPower.setPower(leftFrontPower);
-            lbPower.setPower(leftBackPower);
-            rtPower.setPower(rightFrontPower);
-            rbPower.setPower(rightBackPower);
-
 
             ////////////////////////////////////////////////////////////////////////////////////////
             //                                                                                    //
@@ -163,10 +125,6 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
                 rbPower.setPower(-1);
 
             }
-
-
-
-
 
             if(armUpControl){
 
@@ -211,19 +169,17 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
 
                 armMain.setPosition(1);
                 //armMain.setPosition(2);
-                sleep(500);
+                //sleep(500);
                 armHold.setPosition(0);
 
 
 
             }else{
 
+
                 armHold.setPosition(1);
-                sleep(1000);
+                //sleep(2000);
                 armMain.setPosition(0);
-
-
-
 
 
             }
@@ -239,6 +195,16 @@ public class BumblebeeTeliOp2 extends LinearOpMode {
             }
 
 
+
+            leftFrontPower   = Range.clip(drive + turn, -1.0, 1.0) ;
+            leftBackPower    = Range.clip(drive + turn, -1.0, 1.0);
+            rightFrontPower  = Range.clip(drive - turn, -1.0, 1.0);
+            rightBackPower   = Range.clip(drive - turn, -1.0, 1.0);
+
+            ltPower.setPower(leftFrontPower);
+            lbPower.setPower(leftBackPower);
+            rtPower.setPower(rightBackPower);
+            rbPower.setPower(rightFrontPower);
 
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());

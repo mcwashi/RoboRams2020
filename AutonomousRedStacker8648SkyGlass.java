@@ -1,18 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
 
-@Autonomous(name="Autonomous Blue", group="Pushbot")
+//@Autonomous(name="Autonomous Red 8648 Sky Glass", group="Pushbot")
 //@Disabled
-public class AutonomousTest extends LinearOpMode {
+public class AutonomousRedStacker8648SkyGlass extends LinearOpMode {
 
     private ElapsedTime runtime      = new ElapsedTime();
     private DcMotor ltPower          = null;
@@ -20,7 +16,7 @@ public class AutonomousTest extends LinearOpMode {
     private DcMotor rtPower          = null;
     private DcMotor rbPower          = null;
     private DcMotor armUP            = null;
-    private DcMotor slider           = null;
+    private DcMotor slide           = null;
 
     private Servo hRight;
     private Servo hLeft;
@@ -39,14 +35,31 @@ public class AutonomousTest extends LinearOpMode {
         rtPower       = hardwareMap.get(DcMotor.class, "motortr");
         rbPower       = hardwareMap.get(DcMotor.class, "motorbr");
 
-        armUP         = hardwareMap.get(DcMotor.class, "arm");
-        slider        = hardwareMap.get(DcMotor.class, "slider");
+        //armUP         = hardwareMap.get(DcMotor.class, "arm");
+        //slider        = hardwareMap.get(DcMotor.class, "slider");
 
-        hRight        = hardwareMap.get(Servo.class, "rHook");
-        hLeft         = hardwareMap.get(Servo.class, "lHook");
+        slide         = hardwareMap.get(DcMotor.class, "slide");
 
-        armMain       = hardwareMap.get(Servo.class, "aMain");
-        armHold       = hardwareMap.get(Servo.class, "aHold");
+        hRight        = hardwareMap.get(Servo.class, "pullR");
+        hLeft         = hardwareMap.get(Servo.class, "pullL");
+
+        armMain       = hardwareMap.get(Servo.class, "grMain");
+        armHold       = hardwareMap.get(Servo.class, "grHold");
+
+        armMain.setPosition(1);
+        armHold.setPosition(0);
+
+
+//        servo1               = hardwareMap.get(Servo.class, "pullR");
+//        servo2           = hardwareMap.get(Servo.class, "pullL");
+//
+//        grMain               = hardwareMap.get(Servo.class, "grMain");
+//        grHold           = hardwareMap.get(Servo.class, "grHold");
+//
+
+
+
+
 
         // Most robots need the motor on one side to be reversed to drive forward
         // Reverse the motor that runs backwards when connected directly to the battery
@@ -55,11 +68,13 @@ public class AutonomousTest extends LinearOpMode {
         rtPower.setDirection(DcMotor.Direction.REVERSE);
         rbPower.setDirection(DcMotor.Direction.REVERSE);
 
+
+
         //armMain.setPosition(-.80);
         //armHold.setPosition(.95);
 
-        hRight.setPosition(0);
-        hLeft.setPosition(1);
+        //hRight.setPosition(0);
+        //hLeft.setPosition(1);
 
 
 
@@ -88,46 +103,19 @@ public class AutonomousTest extends LinearOpMode {
 
 
 
-        //Go left
-        ltPower.setPower(.5);
-        lbPower.setPower(-.5);
-        rtPower.setPower(-.5);
-        rbPower.setPower(.5);
-        sleep(500);
 
 
-
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rbPower.setPower(0);
-        lbPower.setPower(0);
+        hLeft.setPosition(.50);
         sleep(1000);
 
-        //Move Forward
-        rtPower.setPower(-.5);
-        ltPower.setPower(-.5);
-        sleep(1300);
-
-
-        hRight.setPosition(1);
-        hLeft.setPosition(0);
-        sleep(1500);
-
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-//
 
         //Move Back
         rtPower.setPower(.5);
-        lbPower.setPower(.5);
-        rbPower.setPower(.5);
         ltPower.setPower(.5);
-        sleep(2500);
+        rbPower.setPower(-.5);
+        lbPower.setPower(-.5);
+        sleep(1700);
+
 
 
         //stop
@@ -137,88 +125,8 @@ public class AutonomousTest extends LinearOpMode {
         lbPower.setPower(0);
         sleep(1000);
 
-
-        hRight.setPosition(0);
-        hLeft.setPosition(1);
-        sleep(1500);
-
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-
-
-        //Go right
-        ltPower.setPower(-.5);
-        lbPower.setPower(.5);
-        rtPower.setPower(.5);
-        rbPower.setPower(-.5);
-        sleep(2000);
-
-
-
-
-
-
-
-
-
-
-
-
-//
-        //Move backward
-//        rtPower.setPower(.5);
-//        lbPower.setPower(-.5);
-//        rbPower.setPower(.5);
-//        ltPower.setPower(-.5);
-//        sleep(2000);
-
-
-//        //Move Back
-//        rtPower.setPower(-.5);
-//        lbPower.setPower(-.5);
-//        rbPower.setPower(-.5);
-//        ltPower.setPower(-.5);
-//        sleep(500);
-//
-//        //stop
-//        rtPower.setPower(0);
-//        ltPower.setPower(0);
-//        rtPower.setPower(0);
-//        ltPower.setPower(0);
-//        sleep(1000);
-//
-//        //Move Forward
-//        rtPower.setPower(.50);
-//        rbPower.setPower(.50);
-//        ltPower.setPower(-.50);
-//        lbPower.setPower(-.50);
-//
-//
-//        sleep(3000);
-
-
-//
-
-
-
-
-
-
-
-
-
-
-
-        //}
-
-
-
-
-
+        hLeft.setPosition(0);
+        sleep(500);
 
 
     }

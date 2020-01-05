@@ -13,7 +13,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
-@TeleOp(name = "Staker", group = "Linear OpMode")
+//@TeleOp(name = "Staker", group = "Linear OpMode")
 //@Disabled
 public class Stacker2 extends LinearOpMode {
 

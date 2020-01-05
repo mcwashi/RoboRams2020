@@ -6,9 +6,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-//@Autonomous(name="Autonomous Red 8648 Glass", group="Pushbot")
+//@Autonomous(name="Autonomous Red 8648 Sky Bridge", group="Pushbot")
 //@Disabled
-public class AutonomousRedStacker8648NewPark extends LinearOpMode {
+public class AutonomousRedStacker8648SkyBridge extends LinearOpMode {
 
     private ElapsedTime runtime      = new ElapsedTime();
     private DcMotor ltPower          = null;
@@ -86,15 +86,34 @@ public class AutonomousRedStacker8648NewPark extends LinearOpMode {
 
         waitForStart();
 
+       // while (opModeIsActive()){
+
+//            leftFrontPower   = Range.clip(drive + turn, -1.0, 1.0) ;
+//            leftBackPower    = Range.clip(drive + turn, -1.0, 1.0);
+//            rightFrontPower  = Range.clip(drive - turn, -1.0, 1.0);
+//            rightBackPower   = Range.clip(drive - turn, -1.0, 1.0);
+
+//            ltPower.setPower(leftFrontPower);
+//            lbPower.setPower(leftBackPower);
+//            rtPower.setPower(rightBackPower);
+//            rbPower.setPower(rightFrontPower);
+
+            //        robot.rightDrive.setPower(-0.5)
+            //        robot.leftDrive.setPower(-0.5);
 
 
-        //Go right
+
+
+
+        hLeft.setPosition(.50);
+        sleep(1000);
+
+        //Go left
         ltPower.setPower(.5);
         lbPower.setPower(.5);
         rtPower.setPower(.5);
         rbPower.setPower(.5);
-        sleep(1500);
-
+        sleep(2200);
 
         //stop
         rtPower.setPower(0);
@@ -103,88 +122,14 @@ public class AutonomousRedStacker8648NewPark extends LinearOpMode {
         lbPower.setPower(0);
         sleep(1000);
 
-        //Move Forward
-        rtPower.setPower(-.5);
-        ltPower.setPower(-.5);
-        rbPower.setPower(.5);
-        lbPower.setPower(.5);
-        sleep(900);
-//
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-//
-//
 
-        //clamp
-        armMain.setPosition(0);
-        armHold.setPosition(1);
-        sleep(1000);
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rbPower.setPower(0);
-        lbPower.setPower(0);
-        sleep(1000);
-//
-//        //Move Back
+
+        //Move Back
         rtPower.setPower(.5);
         ltPower.setPower(.5);
         rbPower.setPower(-.5);
         lbPower.setPower(-.5);
         sleep(1700);
-//
-//
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rbPower.setPower(0);
-        lbPower.setPower(0);
-        sleep(1000);
-//
-//
-//        //Move Back with a turn
-        rtPower.setPower(-.75);
-        ltPower.setPower(-.25);
-        rbPower.setPower(-.75);
-        lbPower.setPower(-.25);
-        sleep(4000);
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rbPower.setPower(0);
-        lbPower.setPower(0);
-        sleep(1000);
-
-//        //Go right
-//        ltPower.setPower(.5);
-//        lbPower.setPower(.5);
-//        rtPower.setPower(.5);
-//        rbPower.setPower(.5);
-//        sleep(3500);
-//
-//        //stop
-//        rtPower.setPower(0);
-//        ltPower.setPower(0);
-//        rbPower.setPower(0);
-//        lbPower.setPower(0);
-//        sleep(1000);
-//
-
-//
-//
-        //Move Forward
-        rtPower.setPower(-.5);
-        ltPower.setPower(-.5);
-        rbPower.setPower(.5);
-        lbPower.setPower(.5);
-        sleep(1300);
 
 
 
@@ -197,80 +142,6 @@ public class AutonomousRedStacker8648NewPark extends LinearOpMode {
         ltPower.setPower(0);
         rbPower.setPower(0);
         lbPower.setPower(0);
-        sleep(1000);
-//
-//
-//        //unclamp
-        armMain.setPosition(1);
-        armHold.setPosition(0);
-        sleep(500);
-
-        //        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-
-//
-//
-//        //Go Right
-        ltPower.setPower(.5);
-        lbPower.setPower(.5);
-        rtPower.setPower(.5);
-        rbPower.setPower(.5);
-        sleep(600);
-//
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-
-
-        //Go Right
-        ltPower.setPower(.5);
-        lbPower.setPower(.5);
-        rtPower.setPower(.5);
-        rbPower.setPower(.5);
-        sleep(1800);
-
-
-        //        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-//
-        hLeft.setPosition(.50);
-        sleep(500);
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-//
-//
-//
-//
-//        //backup
-        rtPower.setPower(.5);
-        ltPower.setPower(.5);
-        rbPower.setPower(-.5);
-        lbPower.setPower(-.5);
-        sleep(1900);
-//
-//
-//        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
         sleep(1000);
 
         hLeft.setPosition(0);

@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name="Autonomous Blue 8648 Glass", group="Pushbot")
+//@Autonomous(name="Autonomous Blue 8648 Glass", group="Pushbot")
 //@Disabled
 public class AutonomousBlueStacker8648NewPark extends LinearOpMode {
 

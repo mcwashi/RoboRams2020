@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-//@Autonomous(name="Autonomous Red", group="Pushbot")
+@Autonomous(name="Autonomous Red", group="Pushbot")
 //@Disabled
 public class AutonomousBumbleBeeRed extends LinearOpMode {
 
@@ -51,8 +51,7 @@ public class AutonomousBumbleBeeRed extends LinearOpMode {
         rtPower.setDirection(DcMotor.Direction.REVERSE);
         rbPower.setDirection(DcMotor.Direction.REVERSE);
 
-        //armMain.setPosition(-.80);
-        //armHold.setPosition(.95);
+
 
         hRight.setPosition(0);
         hLeft.setPosition(1);
