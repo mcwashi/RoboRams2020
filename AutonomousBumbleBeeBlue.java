@@ -1,18 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
 
 @Autonomous(name="Autonomous Blue", group="Pushbot")
 //@Disabled
-public class AutonomousTest extends LinearOpMode {
+public class AutonomousBumbleBeeBlue extends LinearOpMode {
 
     private ElapsedTime runtime      = new ElapsedTime();
     private DcMotor ltPower          = null;
@@ -71,21 +67,6 @@ public class AutonomousTest extends LinearOpMode {
 
         waitForStart();
 
-       // while (opModeIsActive()){
-
-//            leftFrontPower   = Range.clip(drive + turn, -1.0, 1.0) ;
-//            leftBackPower    = Range.clip(drive + turn, -1.0, 1.0);
-//            rightFrontPower  = Range.clip(drive - turn, -1.0, 1.0);
-//            rightBackPower   = Range.clip(drive - turn, -1.0, 1.0);
-
-//            ltPower.setPower(leftFrontPower);
-//            lbPower.setPower(leftBackPower);
-//            rtPower.setPower(rightBackPower);
-//            rbPower.setPower(rightFrontPower);
-
-            //        robot.rightDrive.setPower(-0.5)
-            //        robot.leftDrive.setPower(-0.5);
-
 
 
         //Go left
@@ -107,7 +88,7 @@ public class AutonomousTest extends LinearOpMode {
         //Move Forward
         rtPower.setPower(-.5);
         ltPower.setPower(-.5);
-        sleep(1300);
+        sleep(1000);
 
 
         hRight.setPosition(1);
@@ -122,12 +103,15 @@ public class AutonomousTest extends LinearOpMode {
         sleep(1000);
 //
 
-        //Move Back
+        //Move Back --- right here
+        //Move back with a turn
+
         rtPower.setPower(.5);
-        lbPower.setPower(.5);
+        lbPower.setPower(.25);
         rbPower.setPower(.5);
-        ltPower.setPower(.5);
-        sleep(2500);
+        ltPower.setPower(.25);
+        sleep(2000);
+
 
 
         //stop
@@ -138,51 +122,17 @@ public class AutonomousTest extends LinearOpMode {
         sleep(1000);
 
 
-        hRight.setPosition(0);
-        hLeft.setPosition(1);
-        sleep(1500);
-
-        //stop
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        rtPower.setPower(0);
-        ltPower.setPower(0);
-        sleep(1000);
-
-
-        //Go right
-        ltPower.setPower(-.5);
-        lbPower.setPower(.5);
-        rtPower.setPower(.5);
-        rbPower.setPower(-.5);
-        sleep(2000);
 
 
 
 
 
+        //old way that works.....
 
 
-
-
-
-
-
-//
-        //Move backward
-//        rtPower.setPower(.5);
-//        lbPower.setPower(-.5);
-//        rbPower.setPower(.5);
-//        ltPower.setPower(-.5);
-//        sleep(2000);
-
-
-//        //Move Back
-//        rtPower.setPower(-.5);
-//        lbPower.setPower(-.5);
-//        rbPower.setPower(-.5);
-//        ltPower.setPower(-.5);
-//        sleep(500);
+//        hRight.setPosition(0);
+//        hLeft.setPosition(1);
+//        sleep(1500);
 //
 //        //stop
 //        rtPower.setPower(0);
@@ -191,34 +141,13 @@ public class AutonomousTest extends LinearOpMode {
 //        ltPower.setPower(0);
 //        sleep(1000);
 //
-//        //Move Forward
-//        rtPower.setPower(.50);
-//        rbPower.setPower(.50);
-//        ltPower.setPower(-.50);
-//        lbPower.setPower(-.50);
 //
-//
-//        sleep(3000);
-
-
-//
-
-
-
-
-
-
-
-
-
-
-
-        //}
-
-
-
-
-
+//        //Go right
+//        ltPower.setPower(-.5);
+//        lbPower.setPower(.5);
+//        rtPower.setPower(.5);
+//        rbPower.setPower(-.5);
+//        sleep(2000);
 
 
     }
